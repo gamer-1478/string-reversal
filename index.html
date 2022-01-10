@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script Reversal</title>
+  </head>
+  <body>
+    <div>
+      <form onsubmit="return reverseString();">
+        <input type="text" id="input" name="input" />
+        <input type="submit" value="Reverse" />
+      </form>
+      <p id="reversed-value"></p>
+    </div>
+    <script>
+      function reverseStr(str) {
+        return str
+          .split("")
+          .reverse()
+          .join("");
+      }
+
+      function reverseString() {
+        var input = document.getElementById("input").value;
+        var reversed = reverseStr(input);
+        document.getElementById("reversed-value").innerHTML = reversed;
+        return false;
+      }
+    </script>
+  </body>
+</html>
